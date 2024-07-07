@@ -1,0 +1,538 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+button:active {
+  transform: translateY(4px);
+}
+header{
+  position: fixed;
+  top: 0%;
+  z-index: 11;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.423) ;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  margin-left: 2em;
+}
+.logo img{
+  width: 90%;
+}
+header .navbar{
+  margin-right: 5em;
+}
+header .navbar.active{
+  border-bottom: 1px solid rgb(133, 23, 23);
+  padding: 0 0.3em;
+}
+header .navbar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .navbar ul li{
+  list-style: none;
+  margin-left: 3em;
+  display: inline-block;
+}
+header .navbar ul li a{
+  text-decoration: none;
+  color: rgba(209, 14, 14, 0.922);
+  transition: .4s;
+}
+header .navbar ul li a:hover,
+header .navbar ul li a:focus{
+  border-bottom: 1px solid rgb(133, 23, 23);
+}
+header .navbar ul li a.active{
+  border-bottom: 1px solid rgb(133, 23, 23);
+  padding: 0 0.3em;
+}
+body{
+  background: url(../assets/background.jpg);
+  background-size:cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100%;
+}
+.text-container{
+  position: absolute;
+  z-index: 11;
+  top: 20%;
+  left: 2%;
+  width: 46%;
+  height: auto;
+  padding: 1em;
+  border-radius: 15px;
+  background: rgba(8, 8, 8, 0.418);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-container img{
+  width: 90%;
+  height: 15em;
+  margin-left: 3em;
+  margin-bottom: 0.5em;
+}
+.text-container p{
+  width: 100%;
+  color: white;
+  font-size: 0.98em;
+  text-align: justify;
+  margin-left: 0.5em;
+}
+.text-container .btnfield{
+  padding-bottom: 1em;
+  margin-top: 1em;
+}
+.text-container .btnfield a{
+  text-decoration: none;
+  color: black;
+}
+.text-container button{
+  width: 7em;
+  height: 2.5em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 1em;
+  margin-left: 2em;
+}
+.about-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 8em;
+  margin-bottom: 4em;
+  width: 80%;
+  padding: 1em;
+  color: white;
+}
+.about-container .about-header{
+  margin-bottom: 1em;
+}
+.about-container .opening-text{
+  width: 80%;
+  text-align: justify;
+  margin-bottom: 2em;
+}
+.about-container h3{
+  margin-bottom: 1em;
+}
+.about-container .more a{
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+.about-container .synopsis{
+  text-align: justify;
+}
+.about-container .more{
+  margin-top: 1.5em;
+}
+.seasons{
+  width: 100%;
+  height: 100%;
+  margin-top: 8em;
+  margin-bottom: 3em;
+}
+.seasons-container{
+  display: grid;
+  grid-template-columns: repeat(4,6fr);
+  gap: 1em;
+  margin-bottom: 2em;
+  background: rgba(0, 0, 0, 0.296);
+  border-radius: 20px;
+  padding-top: 2em;
+  width: 90%;
+  margin: 0 auto;
+}
+.seasons-header{
+  color: white;
+  padding: 0 12px;
+  border-bottom: 1px solid red;
+  margin: 0 auto;
+  text-align: center;
+  width: 10%;
+}
+.video-tab{
+  color: white;
+  width:50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.296);
+  border: 1px solid red;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+.video-tab img{
+  width: 100%;
+  height: auto;
+  margin: 0.5em;
+}
+.video-tab p{
+  margin: 0.2em;
+}
+
+.button-play {
+  height: 2.3em;
+  border: 1px solid red;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.559);
+  color: white;
+  font-weight: 700;
+  width: 50%;
+  margin: 1em;
+  cursor: pointer;
+}
+.button-play:hover {
+  background: rgba(0, 0, 0, 0.692);
+}
+#video-container{
+  margin: 20px;
+  margin-top: 2em;
+  padding: 20px;
+  background-color: #ffffffa9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.671);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.video-viewer{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 1em auto;
+  color: white;
+  border-bottom: 1px solid red;
+  width: 20%;
+}
+.video-description{
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video-description p{
+  margin: 0 3em; 
+  color: black;
+  font-size: 1.2em;
+}
+
+.video-description p{
+  border-bottom: 1px solid red;
+  padding: 0 1em;
+}
+.hero-overlay{
+  margin-top: 7em;
+  margin-bottom: 2em;
+}
+.fan-art-header{
+  text-align: center;
+  margin-bottom: 7em;
+  color: white;
+  padding: 0 12px;
+  border-bottom: 1px solid red;
+  margin: 1px auto;
+  text-align: center;
+  width: 10%;
+}
+.fan-art{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  place-items: center;
+  gap: 1em;
+  padding: 1.5em;
+  margin: 0 auto;
+  width: 96%;
+  height: auto;
+  background: rgba(11, 11, 11, 0.449);
+  border-radius: 20px;
+}
+.fan-art img{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+footer{
+  position: fixed;
+  bottom: 0%;
+  z-index: 100;
+  width: 100%;
+  height: auto;
+  background: black;
+}
+.footer-container{
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
+  color: rgb(226, 22, 22);
+}
+@media only screen and (max-width: 323px){
+  header .navbar{
+    font-size: 0.7em;
+  }
+  .text-container {
+   font-size: 0.94em;
+  }
+  
+  .hero-overlay{
+    height: 150%;
+  }
+  .hero-overlay .text-container p{
+    width: 90%;
+    color: white;
+    font-size: 0.8em;
+    text-align: justify;
+    margin-left: 0.5em;
+  }
+  .about-container{
+    margin:0 auto;
+    width: 90%;
+    height: auto;
+    margin-top: 11em;
+    font-size: 0.55em;
+  }
+  .about-container .about-header{
+    font-size: 1.5em;
+  }
+  .about-container .opening-text{
+    font-size: 1.2em;
+    width: 100%;
+  }
+  .about-container h3{
+    font-size: 1.25em;
+  }
+  .about-container .synopsis{
+    font-size: 1.2em;
+    width: 100%;
+  }
+  .about-container .more{
+    font-size: 1.2em;
+  }
+  .fan-art{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    width: 10%;
+  }
+  .seasons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 9em;
+    padding-bottom: 4em;
+  }
+  .seasons-header{
+    width: 40%;
+  }
+  .seasons-container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #video-container video{
+    width: 100%;
+    height: 100%;
+  }
+  .video-description .title{
+    font-size: 0.9em;
+  }
+  .video-tab p{
+    font-size: 0.7em;
+  }
+  .fan-art img{
+    width: 90%;
+    height: 90%;
+  }
+}
+@media only screen and (max-width: 540px) and (min-width: 400px){
+  .fan-art{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .fan-art-header h2{
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 504px) and (min-width: 300px){
+  .fan-art-header h2{
+    font-size: 1.37em;
+  }
+}
+@media only screen and (max-width: 640px) and (min-width: 324px) {
+  .about-container{
+    margin:0 auto;
+    width: 95%;
+    height: auto;
+    margin-top: 8em;
+    font-size: 0.7em;
+  }
+}
+@media only screen and (max-width: 767px){
+  header{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5em;
+  }
+  .logo img{
+    width: 12em;
+    margin-bottom: 0.4em;
+  }
+  header .navbar{
+    margin-right: 3em;
+  }
+  .hero-overlay{
+    height: 150%;
+  }
+  body{
+    background: url(../assets/background-image-mobile.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  .text-container{
+    top: 29%;
+    left: 5%;
+    width: 90%;
+    height:  66%;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+  }
+  .text-container img{
+    width: 60%;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .text-container p{
+    width: 90%;
+    color: white;
+    font-size: 1em;
+    text-align: justify;
+    margin-left: 0.5em;
+  }
+  .text-container .btnfield{
+    padding-bottom: 1em;
+    margin-top: 0.5em;
+  }
+  .seasons-header{
+    width: 40%;
+  }
+  #video-container video{
+    height: 100%;
+    width: 100%;
+  }
+
+  .seasons-container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 1em;
+  }
+  .fan-art{
+    width: 100%;
+    height: auto;
+  }
+  .fan-art-header{
+    padding-top: 1em;
+    width: 20%;
+  }
+  
+}
+
+@media only screen and (max-width: 991px) and (min-width:768px){
+  header{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5em;
+  }
+  .logo{
+    width: 100%;
+  }
+  .logo img{
+    width: 40%;
+    margin-bottom: 0.6em;
+  }
+  header .navbar ul li a{
+    font-size: 2em;
+  }
+  body{
+    background: url(../assets/background-image-mobile.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  .text-container{
+    top: 51%;
+    left: 5%;
+    width: 90%;
+    padding-bottom: 1em;
+  }
+  .text-container img{
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .text-container p{
+    width: 90%;
+    color: white;
+    font-size: 2em;
+    text-align: justify;
+    margin-left: 0.5em;
+  }
+  .text-container .btnfield{
+    padding-bottom: 1em;
+    margin-top: 0.5em;
+  }
+  .about-container{
+    margin:0 auto;
+    width: 90%;
+    height: auto;
+    margin-top: 16em;
+    font-size: 0.73em;
+  }
+  .seasons-header{
+    padding-top: 3.4em;
+    width: 20%;
+  }
+  .video-tab{
+    width: 90%;
+  }
+  .fan-art-header{
+    padding-top: 5em;
+    width: 20%;
+  }
+}
